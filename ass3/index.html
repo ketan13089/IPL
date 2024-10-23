@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Design Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="toggle-label">
+            <span class="toggle-inner"></span>
+        </label>
+    </div>
+
+    <header>
+        <h1 class="animated-text">Ketan Ghumare</h1>
+        <p class="subtitle">Exploring CSS Typography, Colors, Transitions & Animations</p>
+    </header>
+
+    <main>
+        <section class="typography-showcase">
+            <h2>Typography Showcase</h2>
+            <div class="text-container">
+                <p class="serif">Elegant Serif Font</p>
+                <p class="sans-serif">Clean Sans-Serif Text</p>
+                <p class="monospace">Monospace Typography</p>
+                <p class="custom-font">Custom Stylized Font</p>
+            </div>
+        </section>
+
+        <section class="transition-showcase">
+            <h2>Hover Transitions</h2>
+            <div class="card-container">
+                <div class="transition-card">
+                    <h3>Scale Effect</h3>
+                    <p>Hover to see transformation</p>
+                </div>
+                <div class="transition-card rotate">
+                    <h3>Rotate Effect</h3>
+                    <p>Hover to see transformation</p>
+                </div>
+                <div class="transition-card skew">
+                    <h3>Skew Effect</h3>
+                    <p>Hover to see transformation</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="animation-showcase">
+            <h2>Animation Examples</h2>
+            <div class="animation-container">
+                <div class="animated-element bounce">Bounce</div>
+                <div class="animated-element pulse">Pulse</div>
+                <div class="animated-element shake">Shake</div>
+                <div class="animated-element flip">Flip</div>
+            </div>
+        </section>
+
+        <section class="color-palette">
+            <h2>Color Transitions</h2>
+            <div class="color-grid">
+                <div class="color-box" style="--delay: 0s">Primary</div>
+                <div class="color-box" style="--delay: 0.2s">Secondary</div>
+                <div class="color-box" style="--delay: 0.4s">Accent</div>
+                <div class="color-box" style="--delay: 0.6s">Neutral</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

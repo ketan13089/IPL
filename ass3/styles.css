@@ -1,0 +1,271 @@
+/* CSS Variables for Light/Dark Mode */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #e74c3c;
+    --accent-color: #2ecc71;
+    --background-color: gray;
+    --text-color: black;
+    --card-background: #f5f5f5;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --primary-color: #2980b9;
+    --secondary-color: #c0392b;
+    --accent-color: #27ae60;
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-background: #2d2d2d;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Typography Styles */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.animated-text {
+    font-size: 3.5rem;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.5s;
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toggle-label {
+    display: block;
+    width: 60px;
+    height: 30px;
+    background-color: #4CAF50;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.toggle-inner {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+#theme-switch {
+    display: none;
+}
+
+#theme-switch:checked + .toggle-label {
+    background-color: #2196F3;
+}
+
+#theme-switch:checked + .toggle-label .toggle-inner {
+    transform: translateX(30px);
+}
+
+/* Typography Showcase Styles */
+.typography-showcase {
+    padding: 2rem;
+    text-align: center;
+}
+
+.text-container p {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.sans-serif {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+.custom-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Transition Showcase Styles */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.transition-card {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+h2{
+    text-align: center;
+   
+}
+
+.transition-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.transition-card.rotate:hover {
+    transform: rotate(5deg);
+}
+
+.transition-card.skew:hover {
+    transform: skew(-5deg);
+}
+
+/* Animation Showcase Styles */
+.animation-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.animated-element {
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.shake {
+    animation: shake 2s infinite;
+}
+
+.flip {
+    animation: flip 2s infinite;
+}
+
+/* Color Palette Styles */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.color-box {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    animation: colorChange 3s infinite alternate;
+    animation-delay: var(--delay);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+    20%, 40%, 60%, 80% {transform: translateX(5px);}
+}
+
+@keyframes flip {
+    0% {transform: perspective(400px) rotateY(0);}
+    100% {transform: perspective(400px) rotateY(360deg);}
+}
+
+@keyframes colorChange {
+    0% {background-color: var(--primary-color);}
+    50% {background-color: var(--secondary-color);}
+    100% {background-color: var(--accent-color);}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .animated-text {
+        font-size: 2.5rem;
+    }
+    
+    .card-container {
+        flex-direction: column;
+    }
+    
+    .animation-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
